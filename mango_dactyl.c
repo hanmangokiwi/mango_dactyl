@@ -50,7 +50,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case KC_ENTER:
                 layer_clear();
                 return true;
+            case PB_28:
+                layer_clear();
+                layer_on(5);
+                return true;
+            case PB_27:
+                layer_clear();
+                layer_on(11);
+                return true;
         }
+    } else {
+        switch (keycode) {
+            case PB_28:
+                layer_clear();
+                return true;
+            case PB_27:
+                layer_clear();
+                return true;
+        }
+
     }
     //  else {
     //     switch (keycode) {
