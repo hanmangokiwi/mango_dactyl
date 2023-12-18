@@ -10,6 +10,14 @@ void matrix_init_kb(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
+        led_t led_state = host_keyboard_led_state();
+        if (led_state.caps_lock) {
+            tap_code(KC_CAPS_LOCK);
+        }
+        if (!led_state.num_lock) {
+            tap_code(KC_NUM_LOCK);
+        }
+
         if (layer_state_is(1)) {
             switch (keycode) {
                 case KC_COMMA:
