@@ -1,13 +1,5 @@
 #include "mango_dactyl.h"
 
-void matrix_init_kb(void) {
-    DDRD &= ~(1 << 5);
-    PORTD &= ~(1 << 5);
-
-    DDRB &= ~(1 << 0);
-    PORTB &= ~(1 << 0);
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         led_t led_state = host_keyboard_led_state();
