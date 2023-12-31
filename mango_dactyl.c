@@ -72,12 +72,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
     }
-    //  else {
-    //     switch (keycode) {
-    //         case KC_LEFT_CTRL:
-    //         layer_clear();
-    //         return true;
-    //     }
-    // }
     return true;
 };
+
+
+void leader_end_user(void) {
+    if (leader_sequence_one_key(KC_QUOTE)) {
+        SEND_STRING("hanminkim123@gmail.com");
+    } else if (leader_sequence_two_keys(KC_M, KC_SLASH)) {
+        SEND_STRING("\\frac{}{}" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+    } else if (leader_sequence_two_keys(KC_M, KC_S)) {
+        SEND_STRING("\\displaystyle{\\sum_{}^{}}" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+    } else if (leader_sequence_two_keys(KC_M, KC_P)) {
+        SEND_STRING("\\displaystyle{\\prod_{}^{}}" SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+    }
+}
