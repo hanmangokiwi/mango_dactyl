@@ -63,11 +63,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         switch (keycode) {
             case PB_28:
                 layer_clear();
-                cancel_key_lock();
                 return true;
             case PB_27:
                 layer_clear();
-                cancel_key_lock();
                 return true;
         }
 
